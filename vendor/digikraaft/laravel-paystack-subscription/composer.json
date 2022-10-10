@@ -1,0 +1,72 @@
+{
+    "name": "digikraaft/laravel-paystack-subscription",
+    "description": "A simple interface to Paystack's subscription billing services. It takes the pain of implementing subscription management off you.",
+    "keywords": [
+        "digikraaft",
+        "laravel-paystack-subscription",
+        "paystack",
+        "subscription",
+        "billing",
+        "payment"
+    ],
+    "homepage": "https://github.com/digikraaft/laravel-paystack-subscription",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tim Oladoyinbo",
+            "email": "dev@digitalkraaft.com",
+            "homepage": "https://digitalkraaft.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^8.1",
+        "digikraaft/laravel-paystack-webhooks": "^2.0",
+        "digikraaft/paystack-php": "^2.1",
+        "illuminate/contracts": "^9.0",
+        "illuminate/database": "^9.0",
+        "illuminate/http": "^9.0",
+        "illuminate/notifications": "^9.0",
+        "illuminate/routing": "^9.0",
+        "illuminate/support": "^9.0",
+        "illuminate/view": "^9.0",
+        "nesbot/carbon": "^2.35",
+        "symfony/http-kernel": "^6.0|^6.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.24",
+        "orchestra/testbench": "^7.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Digikraaft\\PaystackSubscription\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Digikraaft\\PaystackSubscription\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Digikraaft\\PaystackSubscription\\PaystackSubscriptionServiceProvider"
+            ],
+            "aliases": {
+                "PaystackSubscription": "Digikraaft\\PaystackSubscription\\PaystackSubscriptionFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
